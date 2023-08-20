@@ -22,6 +22,10 @@ https://rook.io/docs/rook/latest/Getting-Started/quickstart
 git clone --single-branch --branch master https://github.com/rook/rook.git
 cd rook/deploy/examples
 kubectl create -f crds.yaml -f common.yaml -f operator.yaml
+
+# To run cluster.yaml we need at least 3 worker node.
+# cluster-test.yaml cluster settings for a test environment such as minikube
+# cluster-on-pvc.yaml cluster settings for a production cluster running in a dynamic cloud environment.
 kubectl create -f cluster.yaml
 ```
 

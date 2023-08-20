@@ -14,3 +14,11 @@ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.1
 sudo apt-get install -y lvm2
 ```
 
+## simple rook cluster with kubectl
+```
+git clone --single-branch --branch master https://github.com/rook/rook.git
+cd rook/deploy/examples
+kubectl create -f crds.yaml -f common.yaml -f operator.yaml
+kubectl create -f cluster.yaml
+```
+

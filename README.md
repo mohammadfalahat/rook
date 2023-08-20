@@ -14,7 +14,7 @@ kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.1
 sudo apt-get install -y lvm2
 ```
 
-Quick Start:
+# Quick Start:
 https://rook.io/docs/rook/latest/Getting-Started/quickstart
 
 ## simple rook cluster with kubectl
@@ -29,3 +29,18 @@ kubectl create -f crds.yaml -f common.yaml -f operator.yaml
 kubectl create -f cluster.yaml
 ```
 
+# Ceph Toolbox
+https://rook.io/docs/rook/latest/Troubleshooting/ceph-toolbox
+
+```
+kubectl create -f toolbox.yaml
+kubectl -n rook-ceph rollout status deploy/rook-ceph-tools
+
+# Once the rook-ceph-tools pod is running, you can connect to it with:
+#Example:
+  # ceph status
+  # ceph osd status
+  # ceph df
+  # rados df
+kubectl -n rook-ceph exec -it deploy/rook-ceph-tools -- bash
+```

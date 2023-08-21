@@ -45,7 +45,7 @@ kubectl -n rook-ceph rollout status deploy/rook-ceph-tools
 kubectl -n rook-ceph exec -it deploy/rook-ceph-tools -- bash
 ```
 
-#Ceph Dashboard
+# Ceph Dashboard
 https://rook.io/docs/rook/latest/Storage-Configuration/Monitoring/ceph-dashboard
 
 1. deploy ingress nginx controller:

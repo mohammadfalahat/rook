@@ -56,7 +56,7 @@ https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/pr
 ```
 
 
-3. Create a secret to keep domain certificate inside kubernetes:
+2. Create a secret to keep domain certificate inside kubernetes:
 
 ```
 kubectl create secret tls my-tls-secret --cert=path/to/certificate.crt --key=path/to/private-key.key

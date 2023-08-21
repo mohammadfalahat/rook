@@ -44,3 +44,23 @@ kubectl -n rook-ceph rollout status deploy/rook-ceph-tools
   # rados df
 kubectl -n rook-ceph exec -it deploy/rook-ceph-tools -- bash
 ```
+
+#Ceph Dashboard
+https://rook.io/docs/rook/latest/Storage-Configuration/Monitoring/ceph-dashboard
+
+1. deploy ingress nginx controller:
+https://kubernetes.github.io/ingress-nginx/deploy
+```
+# always latest ingress-nginx from main branch:
+https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+```
+
+
+3. Create a secret to keep domain certificate inside kubernetes:
+
+```
+kubectl create secret tls my-tls-secret --cert=path/to/certificate.crt --key=path/to/private-key.key
+```
+
+3. Customize dashboard-ingress-https.yaml and correct hosts and secretname
+4. 

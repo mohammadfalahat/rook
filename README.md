@@ -69,3 +69,12 @@ kubectl create secret tls my-tls-secret --cert=path/to/certificate.crt --key=pat
 ```
 kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['data']['password']}" | base64 --decode && echo
 ```
+
+# Add a disk to a worker
+
+```
+# example: add a disk for worker3
+# we have to delete same worker crashcollector pod
+# this make rook ceph to reload the pod and rescan the node.
+kubectl delete pod --force -n rook-ceph rook-ceph-crashcollector-worker3-5844474bfb-5qzpt
+```

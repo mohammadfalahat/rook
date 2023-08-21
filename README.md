@@ -63,4 +63,9 @@ kubectl create secret tls my-tls-secret --cert=path/to/certificate.crt --key=pat
 ```
 
 3. Customize dashboard-ingress-https.yaml and correct hosts and secretname
-4. 
+
+4. Get Login password from secretfile:
+
+```
+kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['data']['password']}" | base64 --decode && echo
+```

@@ -78,3 +78,12 @@ kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['dat
 # this make rook ceph to reload the pod and rescan the node.
 kubectl delete pod --force -n rook-ceph rook-ceph-crashcollector-worker3-5844474bfb-5qzpt
 ```
+
+```
+
+# this part will complete ....
+ /var/lib/rook/rook-ceph/rook-ceph.config
+ /var/lib/rook/rook-ceph/client.admin.keyring
+
+
+```

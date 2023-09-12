@@ -79,6 +79,12 @@ kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['dat
 kubectl delete pod --force -n rook-ceph rook-ceph-crashcollector-worker3-5844474bfb-5qzpt
 ```
 
+# RADOS Gateway (Object Storage S3)
+https://rook.io/docs/rook/v1.11/Storage-Configuration/Object-Storage-RGW/object-storage
+
+There is a terrible bug in rook-ceph manager dashboard with rgw , it try to call rgw with hostname:8080
+it doesn't work correctly when we have been assigned an external IP with MetalLB to radosGW service.
+
 ```
 
 # this part will complete ....

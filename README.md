@@ -7,7 +7,7 @@ https://rook.io/docs/rook/v1.12/Getting-Started/Prerequisites/prerequisites
 
 ```
 # Master Node:
-kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.11.1/cert-manager.yaml
+kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.13.1/cert-manager.yaml
 ```
 ```
 # All Nodes:

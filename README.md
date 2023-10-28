@@ -62,7 +62,7 @@ https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/pr
 kubectl create secret tls my-tls-secret --cert=path/to/certificate.crt --key=path/to/private-key.key
 ```
 
-3. Customize dashboard-ingress-https.yaml and correct hosts and secretname
+3. Customize dashboard-ingress-https.yaml and correct hosts and secretname and comment `nginx.ingress.kubernetes.io/server-snippet` configs. then apply.
 
 4. Get Login password from secretfile:
 

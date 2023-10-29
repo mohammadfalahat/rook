@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rook-ceph-shahrooz-store-dashboard
+  namespace: rook-ceph # namespace:cluster
+  annotations:
+    kubernetes.io/tls-acme: "true"
+spec:
+  ingressClassName: "nginx"
+  tls:
+    - hosts:
+        - cephs3.buluttakin.com
+      secretName: buluttakin23-24
+  rules:
+    - host: cephs3.buluttakin.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: rook-ceph-rgw-shahrooz-store
+                port:
+                  name: http

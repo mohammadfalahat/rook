@@ -82,7 +82,7 @@ kubectl delete pod --force -n rook-ceph rook-ceph-crashcollector-worker3-5844474
 # RADOS Gateway (Object Storage S3)
 https://rook.io/docs/rook/v1.12/Storage-Configuration/Object-Storage-RGW/object-storage
 
-# Cleanup
+# ❌ Cleanup
 
 Follow steps here: https://rook.io/docs/rook/v1.12/Getting-Started/ceph-teardown
 

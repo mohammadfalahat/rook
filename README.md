@@ -81,3 +81,26 @@ kubectl delete pod --force -n rook-ceph rook-ceph-crashcollector-worker3-5844474
 
 # RADOS Gateway (Object Storage S3)
 https://rook.io/docs/rook/v1.12/Storage-Configuration/Object-Storage-RGW/object-storage
+
+# Cleanup
+
+Follow steps here: https://rook.io/docs/rook/v1.12/Getting-Started/ceph-teardown
+
+If your bucket crds stuck on terminating, edit crd's with this command:
+```
+kubectl edit crd <crd-name>
+```
+Find the finalizer section and delete it.
+
+Then go to rook deploy examples directory and run this command to check everything is deleted successfully.
+if this code stuck it means that something was wrong while your cleanup.
+```
+# Find all .yaml files in the current directory
+cd ./rook/deploy/examples
+for FILE in *.yaml; do
+  if [ -f "$FILE" ]; then
+    # Run kubectl delete on each .yaml file
+    kubectl delete --force -f "$FILE" --ignore-not-found
+  fi
+done
+```

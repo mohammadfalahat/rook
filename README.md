@@ -26,6 +26,7 @@ kubectl create -f crds.yaml -f common.yaml -f operator.yaml
 # To run cluster.yaml we need at least 3 worker node.
 # cluster-test.yaml cluster settings for a test environment such as minikube
 # cluster-on-pvc.yaml cluster settings for a production cluster running in a dynamic cloud environment.
+
 # BEFORE APPLYING cluster.yaml
 # BE SURE THAT YOU HAVE CLEARED PROXY SETTINGS In all nodes Containerd config:
 # /etc/systemd/system/containerd.service.d/http_proxy.conf

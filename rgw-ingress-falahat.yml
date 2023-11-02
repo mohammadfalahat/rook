@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: rook-ceph-shahrooz-store-dashboard
+  name: rook-ceph-s3-dashboard
   namespace: rook-ceph # namespace:cluster
   annotations:
     kubernetes.io/tls-acme: "true"
@@ -19,6 +19,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: rook-ceph-rgw-shahrooz-store
+                name: rook-ceph-rgw-store-name
                 port:
                   name: http
